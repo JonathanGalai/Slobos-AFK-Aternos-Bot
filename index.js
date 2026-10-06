@@ -1399,7 +1399,7 @@ function initializeModules(bot, mcData, defaultMove) {
 
   // ---------- AUTO AUTH (REACTIVE) ----------
   if (config.utils["auto-auth"] && config.utils["auto-auth"].enabled) {
-    const password = config.utils["auto-auth"].password;
+    const password = process.env.AUTH_PASSWORD || config.utils["auto-auth"].password;
     let authHandled = false;
 
     const tryAuth = (type) => {
